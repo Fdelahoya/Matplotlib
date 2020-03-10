@@ -1,1 +1,18 @@
 
+# write function to plot rankings over time for 1 roller coaster here:
+def ranking_ot(name, material):
+    
+    plt.plot(material[material['Name'].str.match(name)]['Year of Rank'],\
+         material[material['Name'].str.match(name)]['Rank'], marker='o')
+    plt.xlabel('Year')
+    plt.ylabel('Ranking')
+    plt.title('Ranking of  '+str(name)+' over time')
+    plt.subplot().invert_yaxis()
+    
+    
+
+    plt.show()
+
+
+
+ranking_ot('El Toro', wood)
